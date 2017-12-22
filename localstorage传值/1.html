@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情页</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ul{
+            list-style: none;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+            padding-left:100px;
+        }
+        .box{
+            width: 500px;
+            height: 600px;
+            margin:100px auto;
+        }
+        li>p:nth-of-type(1){
+            font-size: 30px;
+            text-align: center ;
+            margin:20px 0;
+        }
+        li>p:nth-of-type(2){
+            font-size: 40px;
+            text-align: center ;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+    </ul>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.1.1-rc1/jquery.min.js"></script>
+<script>
+    var user = JSON.parse(localStorage.getItem("user"));
+    var str='';
+        str+='<li>';
+        str+='<img src="'+user.src+'">';
+        str+='<p>'+user.text+'</p>';
+        str+='<p>'+user.price+'</p>';
+        str+='<p>'+user.detail+'</p>';
+        str+='</li>';
+    $("ul").html(str);
+</script>
+</html>

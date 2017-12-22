@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>产品展示</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            text-decoration:none;
+        }
+        .box{
+            width: 700px;
+            height: 311px;
+            margin:200px auto;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            float: left;
+            margin-left:100px;
+        }
+      li>img{
+        vertical-align: center;
+          width: 100px;
+          height: 100px;
+      }
+       button{
+            width: 80px;
+            height: 30px;
+           margin-left:10px;
+           background: linear-gradient(#fff125, #82ff73);
+           border:none;
+           outline-style:none;
+           margin-bottom:20px;
+           cursor: pointer ;
+        }
+       p{
+           text-align: center;
+           margin:10px 0;
+       }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+        </ul>
+    </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.1.1-rc1/jquery.min.js"></script>
+<script>
+    var data=[
+        {
+            text:'华硕电脑',
+            src:'img/华硕.jpg',
+            price:4000,
+            describe:'详情',
+            detail:'华硕电脑股份有限公司（简称华硕），品牌为“ASUS”，公司成立于1990年4月2日，是台湾的国际品牌公司，也是全球最大的主板的制造商，同时亦为显卡、桌上电脑、通讯产品、光驱等产品的领导厂商；另外，“华硕”之名来自该公司成为“华人之硕”的期望，而英文名ASUS的灵感来自希腊神话的天马Pegasus，象征艺术灵感、学习、完美与纯真，正符合华硕永不懈怠、追求卓越的精神。'
+        },
+        {
+            text:'弘基电脑',
+            src:'img/鸿基.jpg',
+            price:5000,
+            describe:'详情',
+            detail:'宏碁[hóng qi]成立于1976年，是一个国际化的自有品牌公司，主要从事于智能手机、平板电脑、个人电脑、显示产品与服务器的研发、设计、行销、销售及服务，也结合物联网积极发展云端技术与解决方案，是一个整合软件、硬件与服务的企业。宏碁2014年个人电脑出货量全球排名第四，营收为103.9亿美元，拥有全球约7000名员工。'
+        },
+        {
+            text:'联想电脑',
+            src:'img/联想.jpg',
+            price:6000,
+            describe:'详情',
+            detail:'联想是中国驰名品牌，是全球第三大个人电脑厂商仅次于苹果与宏碁，名列《财富》世界500强，为全球前五大电脑厂商中增长最快 。'
+    },
+        {
+            text:'神舟电脑',
+            src:'img/神舟.jpg',
+            price:7000,
+            describe:'详情',
+            detail:'神州数码拥有丰富的全球 IT 资源，分销 89 个国际顶尖 IT 厂商的上万种产品，覆盖从个人应用到企业应用的所有领域，拥有遍布全国的渠道网络，渠道数量达到近 10000 余家。连续九年在全国 IT 分销行业市场排名第一， 2005 年神州数码整体分销业务占全国前四家综合分销商的份额超过 50% 。'
+    },
+        {
+            text:'苹果电脑',
+            src:'img/苹果.jpg',
+            price:8000,
+            describe:'详情',
+            detail:'苹果电脑是苹果公司开发上市的一种产品，苹果公司原称苹果电脑公司（Apple Computer, Inc.）总部位于美国加利福尼亚的库比提诺，核心业务是电子科技产品，目前全球电脑市场占有率为3.8%。苹果的Apple II于1970年代助长了个人电脑革命，其后的Macintosh接力于1980年代持续发展。最知名的产品是其出品的Apple II、Macintosh电脑、iPod数位音乐播放器、iTunes音乐商店和iPhone智能手机，它在高科技企业中以创新而闻名。苹果公司于2007年1月9日旧金山的Macworld Expo上宣布改名。'
+
+    },
+        {
+            text:'外星人电脑',
+            src:'img/外星人.jpg',
+            price:9000,
+            describe:'详情',
+            detail:'Alienware是北美著名的整机厂商。Alienware的产品，均采用了当前最高端、顶级的配置，在业界是高端、高品质的代名词，加之外观前卫的机箱，使得Alienware的产品极受DIY的欢迎。提起Alienware，相信很多笔记本电脑发烧友一定都会联想到性能超一流的“外星人”造型，2006年Alienware被戴尔收购，Alienware品牌作为戴尔子品牌继续运作。'
+    }
+    ];
+    var str='';
+    for(var i=0;i<data.length;i++){
+        str+='<li>';
+        str+='<img src="'+data[i].src+'">';
+        str+='<p>'+data[i].text+'</p>';
+        str+='<a href="1.html"><button>'+data[i].describe+'</button></a>';
+        str+='</li>';
+    }
+    $("ul").html(str);
+
+    $('li').on('click',function(){
+       var index= $("li").index(this);
+        console.log(data[index]);
+        console.log(typeof(data[index]));
+       localStorage.setItem("user",JSON.stringify(data[index]));
+    })
+</script>
+</html>

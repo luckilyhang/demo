@@ -1,0 +1,24 @@
+<!DOCTYPE html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0"><link rel=stylesheet href=https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css><title>zhao</title><style>html{
+      font-size:20px;
+    }</style><link href=./static/css/app.3ea244ca30679125b66adf3f198e9aea.css rel=stylesheet></head><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>lovetourist</title></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.78fdfc483a5cf66c05d5.js></script><script type=text/javascript src=./static/js/vendor.d7fc0d18b354f0299b18.js></script><script type=text/javascript src=./static/js/app.cb490a66cd835bca1a88.js></script></body><script src=https://cdn.bootcss.com/jquery/3.2.0/jquery.js></script><script src=https://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap.js></script><script>(function () {
+      var supportsOrientationChange = 'onorientationchange' in window ? 'orientationchange' : 'resize';
+      var clientWidth = document.documentElement.clientWidth;
+      var timer;
+      var nowPX = 0;
+      function setRem() {
+        clientWidth = document.documentElement.clientWidth;
+        if(clientWidth >= 768){
+          nowPX = 768 / 375 * 20;
+        }else{
+          nowPX = clientWidth / 375 * 20;
+        }
+        document.documentElement.style.fontSize = nowPX + 'px';
+      }
+      clientWidth !== 375 && setRem();
+      window.addEventListener(supportsOrientationChange, function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          setRem();
+        }, 300);
+      }, false);
+    })();</script></html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>rent</title><script type=text/javascript src="http://api.map.baidu.com/api?v=2.0&ak=4IU3oIAMpZhfWZsMu7xzqBBAf6vMHcoa"></script><link href=./static/css/app.a305e849aa61bc802aaacd77ace239ac.css rel=stylesheet></head><style>html{
+      font-size:20px;
+    }</style><body><div id=app></div><script type=text/javascript src=./static/js/manifest.7291d5ef9a49d2c1b641.js></script><script type=text/javascript src=./static/js/vendor.17d770379dd0b1b3199f.js></script><script type=text/javascript src=./static/js/app.08daca9c2461b28343f0.js></script></body><script src=https://cdn.bootcss.com/jquery/3.2.0/jquery.js></script><script src=https://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap.js></script><script>(function () {
+      var supportsOrientationChange = 'onorientationchange' in window ? 'orientationchange' : 'resize';
+      var clientWidth = document.documentElement.clientWidth;
+      var timer;
+      var nowPX = 0;
+      function setRem() {
+        clientWidth = document.documentElement.clientWidth;
+        if(clientWidth >= 768){
+          nowPX = 768 / 375 * 20;
+        }else{
+          nowPX = clientWidth / 375 * 20;
+        }
+        document.documentElement.style.fontSize = nowPX + 'px';
+      }
+      clientWidth !== 375 && setRem();
+      window.addEventListener(supportsOrientationChange, function () {
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+          setRem();
+        }, 300);
+      }, false);
+    })();</script></html>
